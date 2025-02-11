@@ -8,8 +8,8 @@ const LoginFormLayout = () => {
         <Modal open={open} onClose={closeModal}>
             <Modal.Panel size={"xs"} className={"md:w-[30rem] pb-[3rem]"}>
                 <Modal.Header
-                    title={"Sign in"}
-                    subtitle={""}
+                    title={"Forgot Password"}
+                    subtitle={"Enter your recovery email"}
                 />
                 <Modal.Content className={"space-y-3"}>
                     <Outlet />

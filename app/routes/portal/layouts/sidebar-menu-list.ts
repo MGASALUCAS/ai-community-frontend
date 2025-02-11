@@ -39,6 +39,12 @@ export const sidebarMenuList: SidebarMenuItemProps[] = [
         pattern: new RegExp("^/portal/challenges*"),
     },
     {
+        Icon: ChallengesIcon,
+        link: "/portal/challenges",
+        name: "Challenges",
+        pattern: new RegExp("^/portal/challenges*"),
+    },
+    {
         Icon: AdminPanelIcon,
         link: "/portal/admin",
         name: "Admins Panel",

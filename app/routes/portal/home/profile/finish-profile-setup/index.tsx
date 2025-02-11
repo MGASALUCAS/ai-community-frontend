@@ -7,14 +7,33 @@ import PageContainer from "~/components/page-container";
 import { Controller } from "react-hook-form";
 import { Button } from "~/components/button";
 import { EditorSmall } from "~/components/tip-tap-editor";
+import useSubmitData from "~/hooks/useSubmitData";
+import { ActionFunctionArgs } from "@remix-run/node";
+import { requireToken } from "~/utils/session.server";
+import { getRequestFormData } from "~/utils/get-request-form-data.server";
+import { post } from "~/utils/httpclient";
+import { formError } from "~/utils/from-error";
+import { redirectWithSuccess } from "remix-toast";
+
+
+export const action = async ({ request }: ActionFunctionArgs) => {
+    const token = await requireToken(request);
+    const formData = await getRequestFormData<ProfileFormType>(request);
+    
+    const [error] = await post("/auth/profile", formData, token);
+    if (error) return formError(error);
+
+    return redirectWithSuccess(
+        `/portal/home`,
+        "Profile Updated Successfully"
+    );
+};
+
 
 const ProfileInfoForm = () => {
 
     const { handleSubmit, profileFormFields, setValue, control } = useManageProfileInfoForm();
 
-    const onSubmit = (formData: ProfileFormType) => {
-        console.log(formData);
-    };
 
     const options = ["React", "Angular", "Vue", "Svelte", "Node.js"];
     const [selectedTechnologies, setSelectedTechnologies] = useState<string[]>([]);
@@ -39,6 +58,12 @@ const ProfileInfoForm = () => {
             : [...selectedSectors, sector];
         setSelectedSectors(newSectors);
         setValue("sectors", newSectors);
+    };
+
+    const submit = useSubmitData();
+    const onSubmit = (formData: ProfileFormType) => {
+        console.log(formData);
+        // submit(formData);
     };
 
     return (

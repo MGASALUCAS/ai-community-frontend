@@ -9,7 +9,7 @@
 - [Documentation](#documentation)
 
 ## Introduction
-Welcome to the QuantumX Tanzania AI Community Project! This project is built using Remix, a full stack web framework.
+Welcome to the Tanzania AI Community Project! This project is built using Remix, a full stack web framework as a stack for the frontend.
 
 ## Project Structure
 The project is organized as follows:

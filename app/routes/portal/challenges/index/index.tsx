@@ -25,22 +25,43 @@
 
 import { useState } from "react";
 
+
+const filters = [
+  "All Challenges",
+  "Beginner",
+  "Intermediate",
+  "Complex",
+  "Research",
+  "Community",
+];
+
+
 const challenges = [
   {
     id: 1,
     title: "Titanic - Machine Learning",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing...",
-    teams: "12965 Teams",
+    description: "Introduction to ML",
+    teams: "12 Teams",
     status: "Ongoing",
     category: "Knowledge",
     year: "2023",
-    image: "https://www.quantumintelligence.co.tz/static/headers/profile-1.svg", // Replace with actual image URL
+    image: "https://www.quantumintelligence.co.tz/static/headers/profile-1.svg", 
   },
-  // Add more challenge objects here...
+  { category: "Open", title: "Titanic - Machine Learning", image: "https://www.quantumintelligence.co.tz/static/headers/profile-1.svg" },
+  { category: "Closed", title: "AI Ethics Challenge", image: "https://www.quantumintelligence.co.tz/static/headers/profile-1.svg" },
+  { category: "Beginner", title: "Introduction to ML", image: "https://www.quantumintelligence.co.tz/static/headers/profile-1.svg" },
+  { category: "Intermediate", title: "Neural Networks 101", image: "https://www.quantumintelligence.co.tz/static/headers/profile-1.svg" },
+  { category: "Complex", title: "Advanced Reinforcement Learning", image: "https://www.quantumintelligence.co.tz/static/headers/profile-1.svg" },
+  { category: "Research", title: "AI in Healthcare", image: "https://www.quantumintelligence.co.tz/static/headers/profile-1.svg" },
+  { category: "Community", title: "AI for Social Good", image: "https://www.quantumintelligence.co.tz/static/headers/profile-1.svg" },
 ];
 
 export default function ChallengesPage() {
   const [selectedTab, setSelectedTab] = useState("Open");
+
+  function setSelectedFilter(filter: string): void {
+    setSelectedTab(filter);
+  }
 
   return (
     <div className="bg-gray-900 text-white min-h-screen p-6">
@@ -65,11 +86,17 @@ export default function ChallengesPage() {
 
       {/* Categories */}
       <div className="flex space-x-4 mt-6 overflow-x-auto">
-        {["All Challenges", "Beginner Level", "Research", "Intermediate Level"].map((category) => (
-          <button key={category} className="bg-gray-800 px-4 py-2 rounded-lg">
-            {category}
+      {filters.map(filter => (
+          <button
+            key={filter}
+            className={`px-4 py-2 rounded-lg ${selectedTab === filter ? "bg-orange-500" : "bg-gray-700"}`}
+            onClick={() => setSelectedFilter(filter)}
+          >
+            {filter}
           </button>
         ))}
+
+
       </div>
 
       {/* Featured Challenges */}

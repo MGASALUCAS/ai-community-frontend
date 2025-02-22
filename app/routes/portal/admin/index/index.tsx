@@ -21,7 +21,13 @@ const dummyEngagementData = [
 ];
 
 const Dashboard: FC = () => {
-  const [data, setData] = useState<any>(null);
+  interface DashboardData {
+    totalUsers: number;
+    activeUsers: number;
+    aiProjects: number;
+  }
+
+  const [data, setData] = useState<DashboardData | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {

@@ -118,7 +118,7 @@ export default function ChallengesPage() {
   }
 
   return (
-    <div className="bg-gray-900 text-white min-h-screen p-6">
+    <div className="bg-gray-1000 text-white min-h-screen p-6">
       {/* Header Section */}
       <div className="flex justify-between items-center">
         <h1 className="text-3xl font-bold">Challenges</h1>

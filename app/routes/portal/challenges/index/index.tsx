@@ -225,7 +225,7 @@ export default function ChallengesPage() {
       <div className="grid md:grid-cols-3 gap-6 mt-4">
 
         {challenges.map((challenge) => (
-          <Link key={challenge.id} to={`/challenges/${challenge.id}`} className="block">
+          <Link key={challenge.id} to={`${challenge.id}`} className="block">
             <div className="bg-gray-800 p-4 rounded-lg">
               <img src={challenge.image} alt={challenge.title} className="w-full h-40 object-cover rounded-md" />
               <div className="mt-2 flex justify-between">

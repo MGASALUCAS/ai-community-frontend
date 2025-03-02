@@ -6,6 +6,8 @@ import { ProfileIcon, SignOutIcon, UserIcon } from "~/components/icons";
 import { useAppContext } from "~/providers/app-provider";
 import { generateAvatar } from "~/utils/generate-avatar";
 
+
+
 const AuthButton = () => {
     const { authUser } = useAppContext();
     const avatarUrl =

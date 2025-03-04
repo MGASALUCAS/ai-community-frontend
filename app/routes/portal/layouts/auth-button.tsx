@@ -8,8 +8,7 @@ import { generateAvatar } from "~/utils/generate-avatar";
 
 const AuthButton = () => {
     const { authUser } = useAppContext();
-    const avatarUrl =
-        authUser?.avatar ?? generateAvatar(`${authUser?.fullName}`);
+    const avatarUrl = generateAvatar(`${authUser?.fullName}`);
 
         console.log(["Auth User"], authUser);
 

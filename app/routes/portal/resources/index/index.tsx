@@ -92,50 +92,60 @@ const ResourcesPage: FC = () => {
   const [selectedCategory, setSelectedCategory] = useState("Technical");
 
   // Filter resources based on selected category
-  const filteredResources = resources.filter((resource) => resource.category === selectedCategory);
+  const filteredResources = resources.filter(
+    (resource) => resource.category === selectedCategory
+  );
 
   return (
-    <>
-      <PageContainer>
-        <Outlet />
-        <div className="text-textColor p-6">
-          <h1 className="text-2xl font-bold">Resources</h1>
-          <p className="text-lg text-gray-400">Welcome to Tanzania AI Community Resources</p>
+    <PageContainer>
+      <Outlet />
+      <div className="text-textColor p-6">
+        <h1 className="text-2xl font-bold">Resources</h1>
+        <p className="text-lg text-gray-400">
+          Welcome to Tanzania AI Community Resources
+        </p>
 
-          {/* Category Filters */}
-          <div className="mt-4 flex gap-3">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded-lg text-sm font-medium ${
-                  selectedCategory === category ? "bg-orange-500 text-white" : "bg-gray-700 text-gray-300"
-                }`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
+        {/* Category Filters - responsive horizontal scroll on mobile */}
+        <div className="mt-4 flex gap-3 overflow-x-auto whitespace-nowrap">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setSelectedCategory(category)}
+              
+              className={`px-4 py-2 rounded-lg text-sm font-medium flex-shrink-0 ${
+                selectedCategory === category
+                  ? "bg-orange-500 text-white"
+                  : "bg-gray-700 text-gray-300"
+              }`}
+            >
+                        
 
-          {/* Resource List */}
-          <div className="grid grid-cols-3 gap-6 mt-6">
-            {filteredResources.map((resource, index) => (
-              <div key={index} className="bg-gray-800 p-4 rounded-lg shadow-md">
-                <img
-                  // src="/images/resource-placeholder.png"
-                  src={resource.image}
-                  alt={resource.title}
-                  className="w-full h-40 object-cover rounded-md"
-                />
-                <h3 className="mt-3 text-lg font-semibold">{resource.title}</h3>
-              </div>
-            ))}
-          </div>
+              {category}
+
+              <br/>
+            </button>
+          ))}
+
+          <br/>
+
         </div>
-      </PageContainer>
-    </>
+
+        {/* Resource List - responsive grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+          {filteredResources.map((resource, index) => (
+            <div key={index} className="bg-gray-800 p-4 rounded-lg shadow-md">
+              <img
+                src={resource.image}
+                alt={resource.title}
+                className="w-full h-40 object-cover rounded-md"
+              />
+              <h3 className="mt-3 text-lg font-semibold">{resource.title}</h3>
+            </div>
+          ))}
+        </div>
+      </div>
+    </PageContainer>
   );
 };
 
 export default ResourcesPage;
-

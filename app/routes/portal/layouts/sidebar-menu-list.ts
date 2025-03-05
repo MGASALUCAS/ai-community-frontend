@@ -5,6 +5,7 @@ import { ChallengesIcon } from "~/components/icons/challenges-icon";
 import { DiscussionsIcon } from "~/components/icons/discussions-icon";
 import { PostsIcon } from "~/components/icons/posts-icon";
 import { ResourcesIcon } from "~/components/icons/resources-icon";
+import { EventsIcon } from "~/components/icons/events-icon";
 import { SidebarMenuItemProps } from "~/routes/portal/layouts/sidebar-menu";
 
 export const sidebarMenuList: SidebarMenuItemProps[] = [
@@ -31,6 +32,12 @@ export const sidebarMenuList: SidebarMenuItemProps[] = [
         link: "/portal/resources",
         name: "Resources",
         pattern: new RegExp("^/portal/resources*"),
+    },
+    {
+        Icon: EventsIcon,
+        link: "/portal/events",
+        name: "Events",
+        pattern: new RegExp("^/portal/events*"),
     },
     {
         Icon: ChallengesIcon,

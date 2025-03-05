@@ -39,7 +39,7 @@ const TopHeader = () => {
      
 
             <div className="flex items-center gap-4">
-                <Link className="flex gap-2 px-4 py-2 rounded-full hover:opacity-80" to={""}>
+                <Link className="flex gap-2 px-4 py-2 rounded-full hover:opacity-80" to={"/portal/community"}>
                 <span title="Community">
                 <CommunityIcon  className="text-textColor size-6 sm:size-5" />
                 </span>

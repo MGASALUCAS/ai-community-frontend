@@ -4,7 +4,7 @@ import {
     RemoveUploadedFile,
     UploadingFileLoading,
 } from "~/components/avatar-input/card-text";
-import { PhotoAddIcon, PlusIcon } from "~/components/icons";
+import { PlusIcon } from "~/components/icons";
 
 export const ImagePreview = () => {
     const { imageUrl, isUploading, selectedFile, setSelectedFile } =
@@ -20,7 +20,7 @@ export const ImagePreview = () => {
                 <FutureAvatar.Image
                     src={imageUrl}
                     className={"object-cover size-full"}
-                    alt={"employee profile"}
+                    alt={"image"}
                 />
             ) : (
                <button

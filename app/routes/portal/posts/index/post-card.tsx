@@ -2,11 +2,11 @@ import { FC, useState } from "react";
 import { FiMessageCircle } from "react-icons/fi";
 import ExpandedComponent from "./expanded-component";
 import LikeButton from "~/components/like-button";
-import { PostData } from ".";
+import { PostsType } from "../resources";
 
 
 interface PostCardProps {
-  postData: PostData;
+  postData: PostsType;
   isExpanded: boolean;
   onExpand: () => void;
 }
@@ -30,7 +30,7 @@ const PostCard: FC<PostCardProps> = ({ postData, isExpanded, onExpand }: PostCar
               {postData.community} · <span className="text-gray-400">{postData.timeAgo}</span>
             </p>
             <p className="text-sm">
-              {postData.title}. <span className="text-blue-400 hover:opacity-80">{postData.category}</span>
+              {postData.title}. <span className="text-blue-400 hover:opacity-80">#{postData.category}</span>
             </p>
             <p className="text-sm" title={postData.description}>
               {postData.description.slice(0, 40)}{postData.description.length > 30 ? "..." : ""}
@@ -52,14 +52,13 @@ const PostCard: FC<PostCardProps> = ({ postData, isExpanded, onExpand }: PostCar
                 </div>
                 <div className="flex items-center space-x-1 hover:opacity-80">
                   <FiMessageCircle />
-                  <span>{postData.comments}</span>
+                  <span>{postData?.comments?.length}</span>
                 </div>
               </div>
               <div className="flex justify-end space-x-4 pr-4 text-sm text-gray-400">
                 <button className="hover:text-white">Save</button>
                 <button className="hover:text-white">Share</button>
                 <button className="hover:text-white">Hide</button>
-                <button className="hover:text-white">Report</button>
               </div>
             </div>
           </div>

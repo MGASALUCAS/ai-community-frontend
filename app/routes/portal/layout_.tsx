@@ -31,7 +31,6 @@ export const AuthLayout: FC<{
                         <section className={"h-full bg-[#232531] flex-1 overflow-y-auto "}>
                             {children}
                         </section>
-                        <Footer/>
                     </section>
                 </section>
             </AccessControlProvider>

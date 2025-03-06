@@ -11,7 +11,7 @@ import { SidebarMenuItemProps } from "~/routes/portal/layouts/sidebar-menu";
 export const sidebarMenuList: SidebarMenuItemProps[] = [
     {
         Icon: HomeIcon,
-        link: "/portal/home",
+        link: "/portal/community",
         name: "Home",
         pattern: new RegExp("^/portal/home*"),
     },

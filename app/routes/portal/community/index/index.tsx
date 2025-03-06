@@ -1,6 +1,8 @@
 import { LoaderFunction } from "@remix-run/node";
 import { Outlet } from "@remix-run/react";
 import { FC, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faWhatsapp, faTwitter, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import PageContainer from "~/components/page-container";
 
 export const loader: LoaderFunction = async () => {
@@ -158,29 +160,63 @@ const MyComponent: FC = () => {
     <PageContainer>
       <Outlet />
 
-      <div className="text-textColor px-6 py-8 bg-[#1f1f24] rounded-md">
-        <h1 className="text-3xl font-bold mb-4">AI Community</h1>
-        <div className="flex items-center gap-4 mb-2">
-          <img
-            src="https://www.quantumintelligence.co.tz/static/headers/profile-1.svg"
-            alt="Tanzania AI Community"
-            className="w-16 h-16 object-cover rounded-full"
-          />
-          <h2 className="text-xl font-semibold">Tanzania AI Community</h2>
-       <div>
-        
-       </div>
-        <p className="text-gray-400 mb-1">
-          communications@ai.or.tz | +255697926060
+      <div className="bg-[#232531] text-textColor px-6 py-4 rounded-md">
+  {/* Container for image, headings, contact info, social icons, and button */}
+  <div className="flex flex-col md:flex-row items-center md:justify-between gap-4">
+    {/* Left Section: Image + Headings */}
+    <div className="flex items-center gap-7">
+      <img
+        src="https://www.quantumintelligence.co.tz/static/headers/profile-1.svg"
+        alt="Tanzania AI Community"
+        className="w-16 h-16 object-cover rounded-full"
+      />
+      <div>
+        <h1 className="text-xl font-bold">we are making artificial intelligence accessible to everyone</h1>
+        <br/>
+        <p className="text-sm text-gray-300">
+          welcome to the ai community
         </p>
-        </div>
-        {/* <p className="text-gray-300 max-w-3xl">
-        Welcome to the AI Community thriving hub where researchers, developers, entrepreneurs, and enthusiasts unite to harness the transformative power of artificial intelligence. 
-        Our mission is to foster collaboration, share knowledge, and drive innovation across Tanzania’s tech landscape. 
-        By bridging the gap between theory and real-world impact, we aim to empower individuals, institutions, and industries to tackle pressing challenges and shape a brighter, data-driven future. 
-        Join us as we build an inclusive ecosystem that propels AI forward for the benefit of everyone.
-        </p> */}
+        <p className="text-gray-400">community@ai.or.tz</p>
       </div>
+    </div>
+
+    {/* Right Section: Social Icons + Join Button */}
+    <div className="flex flex-col items-center gap-4">
+      <div className="flex items-center gap-4">
+        <button className="text-gray-300 hover:text-white" aria-label="WhatsApp">
+          <FontAwesomeIcon icon={faWhatsapp} />
+        </button>
+        <button className="text-gray-300 hover:text-white" aria-label="Twitter">
+          <FontAwesomeIcon icon={faTwitter} />
+        </button>
+        <button className="text-gray-300 hover:text-white" aria-label="Instagram">
+          <FontAwesomeIcon icon={faInstagram} />
+        </button>
+        <button className="text-gray-300 hover:text-white" aria-label="LinkedIn">
+          <FontAwesomeIcon icon={faLinkedin} />
+        </button>
+      </div>
+      
+      <br/>
+
+      {/* Join Button */}
+      <button className="bg-orange-500 hover:bg-orange-400 text-white px-4 py-2 rounded-md">
+        Join Us
+      </button>
+    </div>
+  </div>
+
+  {/* Footer Text */}
+  <p className="text-gray-400 mt-4 text-sm">
+    This brings together learners, experts, public and private stakeholders to
+    share and collaborate on machine learning, artificial intelligence, and
+    related emerging technologies.
+  </p>
+
+  </div>
+
+
+
 
       {/* Category Tabs */}
       <div className="mt-6 flex gap-3 overflow-x-auto whitespace-nowrap px-6">

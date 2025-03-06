@@ -186,6 +186,7 @@ export default function ChallengesPage() {
     setSelectedTab(filter);
   }
 
+  
   return (
     <div className="bg-gray-1000 text-white min-h-screen p-6">
       {/* Header Section */}

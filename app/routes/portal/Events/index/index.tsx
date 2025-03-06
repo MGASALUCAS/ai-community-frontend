@@ -187,7 +187,7 @@ const EventsPage: FC = () => {
   useEffect(() => {
     fetch("http://127.0.0.1:8000/events/")
       .then((response) => {
-        console.log("Response status:", response.status); // Log the response status
+        console.log("Response status:", response); // Log the response status
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }

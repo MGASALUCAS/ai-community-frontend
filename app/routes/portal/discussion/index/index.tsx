@@ -28,7 +28,7 @@ const dummyDiscussions: Discussion[] = [
     title: "Is anyone using Mamba MDA?",
     category: "Career",
     author: "GabrielaJK",
-    authorImage: "https://via.placeholder.com/50",
+    authorImage: "https://www.quantumintelligence.co.tz/static/headers/profile-1.svg",
     views: 5700,
     comments: 234,
     active: true,
@@ -70,7 +70,7 @@ const DiscussionPage: FC = () => {
       title: newDiscussion.title,
       category: newDiscussion.category,
       author: "CurrentUser", // Replace with actual user data
-      authorImage: "https://via.placeholder.com/50", // Replace with actual user image
+      authorImage: "https://www.quantumintelligence.co.tz/static/headers/profile-1.svg", // Replace with actual user image
       views: 0,
       comments: 0,
       active: true,
@@ -100,6 +100,14 @@ const DiscussionPage: FC = () => {
         <p className="text-lg text-gray-400">
           Welcome to Tanzania AI Community Discussions
         </p>
+
+        {/* Start Discussion Button */}
+        <button
+          onClick={() => setShowForm(true)}
+          className="fixed top-18 right-8 bg-orange-500 text-white px-4 py-2 rounded-full"
+        >
+          Start Discussion
+        </button>
 
         {/* Category Filters - responsive horizontal scroll on mobile */}
         <div className="mt-4 flex gap-3 overflow-x-auto whitespace-nowrap">
@@ -156,13 +164,9 @@ const DiscussionPage: FC = () => {
           ))}
         </div>
 
-        {/* Start Discussion Button */}
-        <button
-          onClick={() => setShowForm(true)}
-          className="fixed bottom-4 right-4 bg-orange-500 text-white px-4 py-2 rounded-full"
-        >
-          Start Discussion
-        </button>
+
+
+
 
         {/* Start Discussion Form */}
         {showForm && (

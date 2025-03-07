@@ -3,6 +3,7 @@ import type { Control, FieldValues, Path, UseFormRegister } from "react-hook-for
 
 import { AvatarFormInput } from "~/components/avatar-input";
 import Checkbox from "~/components/form-controls/checkbox";
+import { ComboboxInput, ComboBoxOptionProp } from "~/components/form-controls/combobox-input";
 import TextInputField, {
     type InputType,
 } from "~/components/form-controls/input-fields/text-input-field";
@@ -20,6 +21,7 @@ type TFormFieldTypes =
     | "textInput"
     | "textarea"
     | "checkbox"
+    | "combobox"
     | "avatar-input"
 
 type DefaultValue =
@@ -59,16 +61,16 @@ export interface FormField<TFieldValues extends FieldValues = FieldValues>
     onInputChange?: (value: string) => void;
     triggerComponent?: ReactNode;
     loadingComponent?: ReactNode;
-    // renderOption?: <TOption extends SelectInputOptionType>(
-    //     props: ComboBoxOptionProp<TOption>
-    // ) => ReactNode;
+    renderOption?: <TOption extends SelectInputOptionType>(
+        props: ComboBoxOptionProp<TOption>
+    ) => ReactNode;
 }
 
 const formFields = {
     checkbox: Checkbox,
     textarea: Textarea,
     select: SelectInput,
-    // combobox: ComboboxInput,
+    combobox: ComboboxInput,
     "avatar-input": AvatarFormInput,
     // "multi-image-input": MultiImageFormInput,
     textInput: TextInputField,

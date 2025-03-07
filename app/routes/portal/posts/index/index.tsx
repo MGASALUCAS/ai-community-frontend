@@ -7,6 +7,8 @@ import CommunitiesSection from "~/routes/portal/posts/index/community-section";
 import PostCard from "~/routes/portal/posts/index/post-card";
 import { useGetPosts } from "~/routes/portal/posts/resources/index";
 import Footer from "../../layouts/footer";
+import InsureData from "~/components/insure-data";
+import { LoadingElement } from "~/components/loading-element";
 
 
 export const loader: LoaderFunction = async () => {
@@ -30,6 +32,11 @@ const Posts: FC = () => {
   return (
     <>
     <Outlet/>
+    <InsureData
+     data={postDataList}
+     loading={!postDataList}
+     loadingElement={<LoadingElement />}
+    >
       <PageContainer>
         <PostsPageHeader />
         <div className="min-h-[100vh] flex flex-col sm:flex-row pt-[6.5rem] justify-between items-start w-full sm:space-x-2 h-[calc(100vh-5rem)]">
@@ -57,6 +64,7 @@ const Posts: FC = () => {
         </div>
        
       </PageContainer>
+      </InsureData>
     </>
   );
 };

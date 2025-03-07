@@ -35,7 +35,6 @@ export const loader: LoaderFunction = async () => {
 
 const HomePage: FC = () => {
   return (
-<<<<<<< HEAD
     <PageContainer>
       <div className="text-white bg-gray-900 min-h-screen">
       <aside className="w-2/4 p-6">
@@ -82,18 +81,6 @@ const HomePage: FC = () => {
       </div>
       <Outlet />
     </PageContainer>
-=======
-    <>
-      <PageContainer>
-      <Outlet />
-        <div className="text-textColor min-h-[100vh] ">
-          <h1>Hello, Samwel!</h1>
-          <p>Welcome to Tanzania AI community</p>
-        </div>
-        <Footer/>
-      </PageContainer>
-    </>
->>>>>>> posts
   );
 };
 

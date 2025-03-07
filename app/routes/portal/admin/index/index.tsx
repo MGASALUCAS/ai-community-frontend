@@ -76,7 +76,7 @@ const dummyReports = [
 ];
 
 // Tabs for top-level navigation
-const TABS = ["Requests", "Reports", "Dashboard"];
+const TABS = ["Dashboard", "Requests", "Reports" ];
 
 interface DashboardData {
   totalUsers: number;

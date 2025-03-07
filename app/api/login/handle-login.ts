@@ -39,7 +39,7 @@ export const handleLogin = async (request: Request) => {
         );
 
 
-    const { redirectTo = "/portal/home" } = parseSearchParams<{
+    const { redirectTo = "/portal/community" } = parseSearchParams<{
         redirectTo?: string;
     }>(request.url);
 

@@ -1,9 +1,6 @@
 import { FC, useState } from "react";
-import { FiMessageCircle } from "react-icons/fi";
-import ExpandedComponent from "./expanded-component";
-import LikeButton from "~/components/like-button";
+import { FiMessageCircle, FiHeart, FiShare2, FiSave, FiMoreHorizontal } from "react-icons/fi";
 import { PostsType } from "../resources";
-
 
 interface PostCardProps {
   postData: PostsType;
@@ -11,60 +8,57 @@ interface PostCardProps {
   onExpand: () => void;
 }
 
-
-const PostCard: FC<PostCardProps> = ({ postData, isExpanded, onExpand }: PostCardProps) => {
-
+const PostCard: FC<PostCardProps> = ({ postData, isExpanded, onExpand }) => {
   return (
-    <div className="bg-gray-900 text-white p-2 rounded-lg w-full">
-      {!isExpanded ? (
-        <div className="flex items-start w-full space-x-4">
-          <div className="relative">
-            <img
-              src={postData.image}
-              alt={postData.altText}
-              className="w-24 h-24 rounded-md"
-            />
+    <div className="bg-cardBackground p-4 rounded-lg shadow-md">
+      <div className="flex justify-between items-center">
+        <div className="flex items-center">
+          <img src={postData.media} alt={postData.name} className="w-12 h-12 rounded-full" />
+          <div className="ml-4">
+            <h2 className="text-lg font-bold">{postData.author}</h2>
+            <p className="text-sm text-gray-500">{postData.created_at}</p>
           </div>
-          <div className="flex-1">
-            <p className="text-sm font-semibold">
-              {postData.community} · <span className="text-gray-400">{postData.timeAgo}</span>
-            </p>
-            <p className="text-sm">
-              {postData.title}. <span className="text-blue-400 hover:opacity-80">#{postData.category}</span>
-            </p>
-            <p className="text-sm" title={postData.description}>
-              {postData.description.slice(0, 40)}{postData.description.length > 30 ? "..." : ""}
-            </p>
-            <div className="flex items-center justify-between space-x-4 mt-2 text-gray-400">
-              <div className="flex items-center space-x-2">
-                <button
-                  className="bg-gray-700 p-1 hover:bg-gray-600 rounded-full"
-                  onClick={() => onExpand()}
-                >
-                  <img
-                    src="/icons/pepicons-pencil_expand.svg"
-                    alt="Expand"
-                    className="w-5 h-5 rounded-md"
-                  />
-                </button>
-                <div className="flex items-center space-x-2">
-                  <LikeButton/>
+        </div>
+        <button onClick={onExpand} className="text-primary">
+          {isExpanded ? "Collapse" : "Expand"}
+        </button>
+      </div>
+      <div className="mt-4">
+        <h3 className="text-lg font-bold">{postData.name}</h3>
+        <p className="text-sm">{postData.caption}</p>
+        <img src={postData.media} alt={postData.name} className="w-full mt-4 rounded-lg" />
+        <div className="flex justify-between items-center mt-4">
+          <div className="flex items-center space-x-4">
+            <FiHeart className="text-xl" />
+            <span>{postData.likes}</span>
+            <FiMessageCircle className="text-xl" />
+            <span>{postData.comments}</span>
+          </div>
+          <div className="flex items-center space-x-4">
+            <FiSave className="text-xl" />
+            <FiShare2 className="text-xl" />
+            <FiMoreHorizontal className="text-xl" />
+          </div>
+        </div>
+      </div>
+      {isExpanded && (
+        <div className="mt-4">
+          <div className="border-t border-gray-200 pt-4">
+            <h4 className="text-lg font-bold">Comments</h4>
+            <div className="max-h-60 overflow-y-auto">
+              {postData.commentsData.map((comment) => (
+                <div key={comment.id} className="flex items-start mt-4">
+                  <img src="path/to/user/avatar.jpg" alt={comment.author} className="w-8 h-8 rounded-full" />
+                  <div className="ml-2">
+                    <p className="text-sm font-bold">{comment.author}</p>
+                    <p className="text-sm">{comment.text}</p>
+                    <p className="text-xs text-gray-500">{comment.created_at}</p>
+                  </div>
                 </div>
-                <div className="flex items-center space-x-1 hover:opacity-80">
-                  <FiMessageCircle />
-                  <span>{postData?.comments?.length}</span>
-                </div>
-              </div>
-              <div className="flex justify-end space-x-4 pr-4 text-sm text-gray-400">
-                <button className="hover:text-white">Save</button>
-                <button className="hover:text-white">Share</button>
-                <button className="hover:text-white">Hide</button>
-              </div>
+              ))}
             </div>
           </div>
         </div>
-      ) : (
-        <ExpandedComponent onExpand={onExpand} postData={postData} />
       )}
     </div>
   );

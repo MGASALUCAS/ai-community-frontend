@@ -89,39 +89,84 @@ const timeAgoWords = [
 ];
 
 
-const generateFakePostsData = () => ({
-    id: faker.number.int({ min: 1, max: 100 }),
-    image: faker.image.url(),
-    altText: faker.lorem.words(2),
-    community: faker.lorem.words(2),
-    timeAgo: timeAgoWords[faker.number.int({ min: 0, max: timeAgoWords.length - 1 })],
-    title: faker.lorem.sentence(3),
-    category: faker.lorem.words(1),
-    description: faker.lorem.paragraph(),
-    likes: Array.from({ length: faker.number.int({ min: 1, max: 10 }) }).map(() => faker.number.int({ min: 1, max: 100 })),
-    comments: Array.from({ length: faker.number.int({ min: 1, max: 10 }) }).map(() => ({
-        id: faker.number.int({ min: 1, max: 100 }),
-        text: faker.lorem.sentence(5),
-        timeAgo: timeAgoWords[faker.number.int({ min: 0, max: timeAgoWords.length - 1 })],
-        user: {
-            id: faker.number.int({ min: 1, max: 100 }),
-            avatar: faker.image.url(),
-            fullName: faker.person.fullName(),
-            emailAddress: faker.internet.email(),
-        },
-        replies: Array.from({ length: faker.number.int({ min: 1, max: 5 }) }).map(() => ({
-            id: faker.number.int({ min: 1, max: 100 }),
-            text: faker.lorem.sentence(5),
-            timeAgo: timeAgoWords[faker.number.int({ min: 0, max: timeAgoWords.length - 1 })],
-            user: {
-                id: faker.number.int({ min: 1, max: 100 }),
-                avatar: faker.image.url(),
-                fullName: faker.person.fullName(),
-                emailAddress: faker.internet.email(),
+// Generate fake posts data with consistent and compelling content
+const generateFakePostsData = () => [
+    {
+        id: 1,
+        image: "https://example.com/image1.jpg",
+        altText: "Robotics Evolution",
+        community: "Udsm AI Community",
+        timeAgo: "7h ago",
+        title: "Evolution of Robotics. #Blog",
+        category: "Blog",
+        description: "An in-depth look at the evolution of robotics over the years.",
+        likes: [5700],
+        comments: [
+            {
+                id: 1,
+                text: "Great article on robotics!",
+                timeAgo: "2h ago",
+                user: {
+                    id: 1,
+                    avatar: "https://example.com/avatar1.jpg",
+                    fullName: "John Doe",
+                    emailAddress: "john.doe@example.com",
+                },
+                replies: [
+                    {
+                        id: 1,
+                        text: "I agree, very informative.",
+                        timeAgo: "1h ago",
+                        user: {
+                            id: 2,
+                            avatar: "https://example.com/avatar2.jpg",
+                            fullName: "Jane Smith",
+                            emailAddress: "jane.smith@example.com",
+                        },
+                    },
+                ],
             },
-        })),
-    })),
-});
+        ],
+    },
+    {
+        id: 2,
+        image: "https://example.com/image2.jpg",
+        altText: "AI in Healthcare",
+        community: "Udsm AI Community",
+        timeAgo: "7h ago",
+        title: "AI in Healthcare. #Blog",
+        category: "Blog",
+        description: "Exploring the impact of AI in the healthcare industry.",
+        likes: [4500],
+        comments: [
+            {
+                id: 2,
+                text: "AI is revolutionizing healthcare!",
+                timeAgo: "3h ago",
+                user: {
+                    id: 3,
+                    avatar: "https://example.com/avatar3.jpg",
+                    fullName: "Alice Johnson",
+                    emailAddress: "alice.johnson@example.com",
+                },
+                replies: [
+                    {
+                        id: 2,
+                        text: "Absolutely, it's amazing.",
+                        timeAgo: "2h ago",
+                        user: {
+                            id: 4,
+                            avatar: "https://example.com/avatar4.jpg",
+                            fullName: "Bob Brown",
+                            emailAddress: "bob.brown@example.com",
+                        },
+                    },
+                ],
+            },
+        ],
+    },
+    // Add more posts as needed
+];
 
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {

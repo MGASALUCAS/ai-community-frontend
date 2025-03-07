@@ -4,7 +4,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full h-8 bg-secondary text-white flex items-center justify-center">
+    <footer className="w-full pt-8 pb-4 bg-primary text-white flex items-center justify-center">
       <p className="text-center text-sm">
         &copy; {currentYear} Tanzania AI Community. { " "} All rights reserved.
       </p>

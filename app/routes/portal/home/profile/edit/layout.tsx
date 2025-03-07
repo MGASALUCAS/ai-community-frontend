@@ -2,13 +2,13 @@ import { Outlet } from "@remix-run/react";
 import Modal from "~/components/modal";
 import useRouteModal from "~/hooks/useRouteModal";
 
-const SignUpFormLayout = () => {
+const ProfileBasicInfoFormLayout = () => {
     const { open, closeModal } = useRouteModal();
     return (
         <Modal open={open} onClose={closeModal}>
-            <Modal.Panel size={"sm"}>
+            <Modal.Panel size={"xs"} className={"md:w-[30rem] pb-[3rem]"}>
                 <Modal.Header
-                    title={"Sign Up"}
+                    title={"Edit Profile"}
                     subtitle={""}
                 />
                 <Modal.Content className={"space-y-3"}>
@@ -18,4 +18,4 @@ const SignUpFormLayout = () => {
         </Modal>
     );
 };
-export default SignUpFormLayout;
+export default ProfileBasicInfoFormLayout;

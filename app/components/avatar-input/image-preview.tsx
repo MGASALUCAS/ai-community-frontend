@@ -4,7 +4,7 @@ import {
     RemoveUploadedFile,
     UploadingFileLoading,
 } from "~/components/avatar-input/card-text";
-import { PhotoAddIcon } from "~/components/icons";
+import { PlusIcon } from "~/components/icons";
 
 export const ImagePreview = () => {
     const { imageUrl, isUploading, selectedFile, setSelectedFile } =
@@ -13,20 +13,22 @@ export const ImagePreview = () => {
     return (
         <FutureAvatar
             className={
-                "size-12 bg-transparent group p-0 relative overflow-hidden"
+                "h-full w-full bg-transparent rounded-none group p-0 relative overflow-hidden"
             }
         >
             {imageUrl ? (
                 <FutureAvatar.Image
                     src={imageUrl}
                     className={"object-cover size-full"}
-                    alt={"employee profile"}
+                    alt={"image"}
                 />
             ) : (
-                <FutureAvatar.Icon
-                    Icon={PhotoAddIcon}
-                    className={"size-9 text-dark-green"}
-                />
+               <button
+                className="flex gap-2 items-center bg-gray-500 p-1 text-textColor border border-textColor"
+                >
+                 <PlusIcon className="h-5 w-5 text-white" />
+                 <p>Upload image</p>
+               </button>
             )}
             {isUploading && <UploadingFileLoading />}
             {selectedFile && !isUploading && (

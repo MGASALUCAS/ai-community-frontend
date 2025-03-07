@@ -14,7 +14,7 @@ const LoginFormLayout = () => {
                 <Modal.Content className={"space-y-3"}>
                     <Outlet />
                 </Modal.Content>
-            </Modal.Panel>
+            </Modal.Panel>x
         </Modal>
     );
 };

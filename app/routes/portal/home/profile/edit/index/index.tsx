@@ -24,7 +24,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
     if (error) return formError(error);
 
     return redirectWithSuccess(
-        `/portal/home`,
+        `/portal/community`,
         "Profile Updated Successfully"
     );
 };
@@ -33,7 +33,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 export const loader = async ({ request }: LoaderFunctionArgs) => {
     const user = await requireUserOrNull(request);
 
-    if (!user) return redirect("/portal/home");
+    if (!user) return redirect("/portal/community");
     return null;
 };
 

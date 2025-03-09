@@ -44,13 +44,49 @@ export type PostHighlightListType = z.infer<typeof PostHighlightListSchema>;
 const generateFakePostHighlightsData = () => ({
     communities: Array.from({ length: faker.number.int({ min: 1, max: 5 }) }).map(() => ({
         id: faker.number.int({ min: 1, max: 100 }),
-        name: faker.lorem.words(2),
+        name: faker.helpers.arrayElement([
+            "AI Community Kenya",
+            "AI Community Nigeria",
+            "AI Community South Africa",
+            "AI Community Ghana",
+            "AI Community Egypt",
+            "AI Community Tanzania",
+            "AI Community Uganda",
+            "AI Community Rwanda",
+            "AI Community Ethiopia",
+            "AI Community Senegal",
+            "AI Community Morocco",
+            "AI Community Tunisia",
+            "AI Community Algeria",
+            "AI Community Zambia",
+            "AI Community Zimbabwe",
+            "AI Community Botswana",
+            "AI Community Namibia",
+            "AI Community Mozambique",
+            "AI Community Malawi",
+            "AI Community Angola"
+        ]),
         members: faker.number.int({ min: 1, max: 1000 }),
         image: faker.image.url(),
     })),
     trendingTopics: Array.from({ length: faker.number.int({ min: 1, max: 5 }) }).map(() => ({
         id: faker.number.int({ min: 1, max: 100 }),
-        name: faker.lorem.words(2),
+        name: faker.helpers.arrayElement([
+            "Quantum Intelligence",
+            "Camel Labs",
+            "Tausi",
+            "Neurotech Africa",
+            "Sarufi",
+            "AI Lab TZ",
+            "Dr Denis",
+            "AI Community",
+            "Deep Indaba",
+            "Deep Learning Indaba",
+            "Open AI",
+            "Deep Mind",
+            "Neuralink",
+            "Deep Seek"
+        ]),
     }))
 });
 

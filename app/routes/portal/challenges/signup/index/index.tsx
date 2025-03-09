@@ -22,7 +22,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
     if (error) return formError(error);
 
     return redirectWithSuccess(
-        `/portal/home`,
+        `/portal/community`,
         "New Adjust Reported Successfully"
     );
 };

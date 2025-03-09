@@ -24,17 +24,49 @@ interface Discussion {
 
 const dummyDiscussions: Discussion[] = [
   {
-    id: 1,
-    title: "Is anyone using Mamba MDA?",
+    id: 5,
+    title: "AI career opportunities in Tanzania",
     category: "Career",
-    author: "GabrielaJK",
+    author: "CareerSeeker",
     authorImage: "https://www.quantumintelligence.co.tz/static/headers/profile-1.svg",
-    views: 5700,
-    comments: 234,
+    views: 7200,
+    comments: 300,
     active: true,
-    content: "This is the content of the discussion. Here users can post their comments and replies.",
+    content: "Are there any AI career opportunities available in Tanzania? Please share any openings or resources.",
   },
-  // Add more dummy discussions as needed
+  {
+    id: 2,
+    title: "How to get started with the platform?",
+    category: "Platform",
+    author: "JohnDoe",
+    authorImage: "https://www.quantumintelligence.co.tz/static/headers/profile-1.svg",
+    views: 3200,
+    comments: 150,
+    active: true,
+    content: "Can someone guide me on how to get started with the Tanzania AI Community platform?",
+  },
+  {
+    id: 3,
+    title: "Looking for AI enthusiasts to connect with",
+    category: "Connect",
+    author: "JaneSmith",
+    authorImage: "https://www.quantumintelligence.co.tz/static/headers/profile-1.svg",
+    views: 4500,
+    comments: 98,
+    active: true,
+    content: "I'm looking to connect with other AI enthusiasts in Tanzania. Let's share knowledge and collaborate!",
+  },
+  {
+    id: 4,
+    title: "Best practices for data preprocessing",
+    category: "Data",
+    author: "DataGuru",
+    authorImage: "https://www.quantumintelligence.co.tz/static/headers/profile-1.svg",
+    views: 6100,
+    comments: 200,
+    active: true,
+    content: "What are some of the best practices for data preprocessing in machine learning projects?",
+  },
 ];
 
 const DiscussionPage: FC = () => {

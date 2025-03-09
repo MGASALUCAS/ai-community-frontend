@@ -61,25 +61,26 @@ export const ProfileDetailsSchema = z.object({
 });
 
 export const generateProfileDetails = (): ProfileDetailsType => ({
-        id: faker.number.int({ min: 1, max: 10 }),
-        name: faker.name.firstName(),
-        email: faker.internet.email(),
-        phone: faker.phone.number(),
-        bio: faker.lorem.paragraph(),
-        profileImage: faker.internet.url(),
-        sectors: Array.from({ length: 2 }, () => ({
-            name: faker.lorem.word(),
-            id: faker.number.int({ min: 1, max: 10 }),
-        })),
-        technologies: Array.from({ length: 2 }, () => ({
-            name: faker.lorem.word(),
-            id: faker.number.int({ min: 1, max: 10 }),
-        })),
-        avatar: faker.internet.url(),
-        tabContent: {
-            Education: faker.lorem.paragraph(),
-            Achievements: faker.lorem.paragraph(),
-            Saves: faker.lorem.paragraph(),
+    id: 1,
+    name: "Mgasa Lucas",
+    email: "mgasa@quantumintelligence.co.tz",
+    phone: "123-456-7890",
+    bio: "AI research with interest in Machine Learning, computer vision and robotics",
+    profileImage: "https://example.com/profile-image.jpg",
+    sectors: [
+        { id: 1, name: "Computer Vision" },
+        { id: 2, name: "Robotics" },
+    ],
+    technologies: [
+        { id: 1, name: "Vision Language Models" },
+        { id: 2, name: "Augmented Robotics" },
+        { id: 3, name: "Hardware and Software" },
+    ],
+    avatar: "https://example.com/avatar.jpg",
+    tabContent: {
+        Education: "Bachelor in Computer Engineering, Certification: Applied Data Science World Quant University",
+        Achievements: "Young Scientist, ICT Nation Innovator of the Year, Best Student Undergraduate Research, National Innovator for Secondary Student",
+        Saves: "Application of Large Language Models in Computer Vision",
     },
 });
 

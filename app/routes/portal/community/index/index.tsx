@@ -15,14 +15,14 @@ const sampleData = [
   {
     category: "People",
     role: "AI Researcher",
-    name: "Jane Doe",
+    name: "Mgasa Lucas",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor.",
     image: "https://www.quantumintelligence.co.tz/static/headers/profile-1.svg",
   },
   {
     category: "People",
-    role: "AI Experts Club",
+    role: "AI Researcher",
     name: "Tech Enthusiasts",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor.",
@@ -31,7 +31,7 @@ const sampleData = [
   {
     category: "People",
     role: "Student",
-    name: "John Smith",
+    name: "Mgasa Lucas",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor.",
     image: "https://www.quantumintelligence.co.tz/static/headers/profile-1.svg",
@@ -39,7 +39,7 @@ const sampleData = [
   {
     category: "People",
     role: "Developer",
-    name: "Alice Brown",
+    name: "Mgasa Lucas",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor.",
     image: "https://www.quantumintelligence.co.tz/static/headers/profile-1.svg",
@@ -81,7 +81,7 @@ const sampleData = [
   {
     category: "Startups",
     role: "AI Startup",
-    name: "Visionary Tech",
+    name: "Neuroteh",
     description:
       "A startup harnessing computer vision for real-time analytics and monitoring.",
     image: "https://www.quantumintelligence.co.tz/static/headers/profile-1.svg",
@@ -89,7 +89,7 @@ const sampleData = [
   {
     category: "Startups",
     role: "Robotics Startup",
-    name: "RoboMakers",
+    name: "Quantum Intelligence",
     description:
       "Building next-gen robotics solutions for healthcare and manufacturing.",
     image: "https://www.quantumintelligence.co.tz/static/headers/profile-1.svg",
@@ -97,15 +97,15 @@ const sampleData = [
   {
     category: "Startups",
     role: "NLP Startup",
-    name: "Linguistic AI",
+    name: "Sarufi",
     description:
       "Developing language processing tools for local dialects and translations.",
     image: "https://www.quantumintelligence.co.tz/static/headers/profile-1.svg",
   },
   {
     category: "Startups",
-    role: "Data Science Startup",
-    name: "DataSolve",
+    role: "Finance Startup",
+    name: "Tausi Africa",
     description:
       "Empowering businesses with data-driven insights and predictive analytics.",
     image: "https://www.quantumintelligence.co.tz/static/headers/profile-1.svg",

@@ -24,7 +24,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
     if (error) return formError(error);
 
     return redirectWithSuccess(
-        `/portal/home`,
+        `/portal/community`,
         "Profile Updated Successfully"
     );
 };
@@ -35,7 +35,7 @@ const ProfileInfoForm = () => {
     const { handleSubmit, profileFormFields, setValue, control } = useManageProfileInfoForm();
 
 
-    const options = ["React", "Angular", "Vue", "Svelte", "Node.js"];
+    const options = ["NLP", ",computer vision", "Deep Learning", "Machine Learning", "Data Science"];
     const [selectedTechnologies, setSelectedTechnologies] = useState<string[]>([]);
 
     const toggleTechnologies = (tag: string) => {

@@ -24,7 +24,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
     if (error) return formError(error);
 
     return redirectWithSuccess(
-        `/portal/home`,
+        `/portal/community`,
         "Get Password from your Email Successfully"
     );
 };
